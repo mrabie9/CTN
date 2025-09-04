@@ -1,0 +1,11 @@
+*.out
+*.pyc
+*/__pycache__
+logs/
+*.pt
+data/
+*.tar.gz
+*.zip
+extra/
+.ctn_env/
+config.yaml
