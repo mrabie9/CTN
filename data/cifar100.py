@@ -21,7 +21,7 @@ torch.manual_seed(args.seed)
 tasks_tr = []
 tasks_te = []
 
-x_tr, y_tr, x_te, y_te = torch.load(os.path.join(args.i))
+x_tr, y_tr, x_te, y_te = torch.load(os.path.join(args.i), map_location='cpu', weights_only=True)
 x_tr = x_tr.float().view(x_tr.size(0), -1) / 255.0
 x_te = x_te.float().view(x_te.size(0), -1) / 255.0
 

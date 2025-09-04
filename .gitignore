@@ -9,3 +9,4 @@ data/
 extra/
 .ctn_env/
 config.yaml
+cifar-100-python/

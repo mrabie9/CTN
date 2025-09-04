@@ -26,7 +26,7 @@ import os
 import datetime
 import time
 def load_datasets(args):
-    d_tr, d_te = torch.load(args.data_path + '/' + args.data_file)
+    d_tr, d_te = torch.load(args.data_path + '/' + args.data_file, map_location = 'cpu', weights_only=True)
     n_inputs = d_tr[0][1].size(1)
     n_outputs = 0
     for i in range(len(d_tr)):
@@ -142,7 +142,7 @@ if __name__ == "__main__":
     # fname and stuffs
     uid = uuid.uuid4().hex[:8]
     start_time = time.time()
-    prefix = args.prefix + '_' if args.prefix is not '' else ''
+    prefix = args.prefix + '_' if args.prefix != '' else ''
     fname = prefix  + args.model + '_' + datetime.datetime.now().strftime("%Y_%m_%d_%H_%M_%S")
     fname += '_' + uid
     fname = os.path.join(args.save_path, fname)
