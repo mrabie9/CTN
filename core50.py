@@ -38,7 +38,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Continuum learning')
     ## data args
     parser.add_argument('--use', type = float, default = 0.5)
-    parser.add_argument('--data_path', default='/data5/quang/data/nico/',help='path where data is located')
+    parser.add_argument('--data_path', default='data/',help='path where data is located')
     parser.add_argument('--samples_per_task', type=int, default=-1,help='training samples per task (all if negative)')
     parser.add_argument('--data_file', default='core',help='data file')
     parser.add_argument('--n_tasks', type=int, default=10)
